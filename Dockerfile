@@ -5,5 +5,5 @@ RUN git clone https://github.com/DescartesResearch/TeaStore.git
 RUN cd TeaStore
 WORKDIR /root/foldername/TeaStore
 RUN mvn clean install -DskipTests
-FROM teastore-base:latest
+FROM clintonmu/teastore-base
 COPY --from=mavenbuild /root/foldername/TeaStore/utilities/tools.descartes.teastore.docker.all/target/tools.descartes.teastore.webui.war /usr/local/tomcat/webapps/tools.descartes.teastore.webui.war
